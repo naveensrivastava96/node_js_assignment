@@ -1,0 +1,105 @@
+#heading {
+
+    margin-top: 5px;
+    height: 64px;
+    background-color: beige;
+    text-align: center;
+    text-align: center;
+
+}
+#new_todo{
+    margin-left: 100px;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-top-style: hidden;
+    border-bottom-style: groove;
+    border-bottom-width: 2px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+#complete-div{
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+#deleted-list{
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+#add_button{
+    height: 30px;
+    width: 90px;
+    border-radius: 4px;
+    background-color: deepskyblue;
+    margin-bottom: 20px;
+
+    opacity: 0.6;
+}
+#active-list{
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+
+}
+#addtodo{
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+.del-button{
+    border-radius: 20px;
+    background-color: crimson;
+    opacity: 0.7;
+    margin-left: 30px;
+    margin-bottom: 10px;
+
+}
+.complete-button{
+    border-radius: 20px;
+    background-color: aquamarine;
+    opacity: 0.7;
+    margin-left: 30px;
+    margin-bottom: 10px;
+
+}
+.text-in-complete{
+    color: green;
+    margin-left: 100px;
+    text-decoration: line-through;
+}
+.text-in-delete{
+    color:red;
+    margin-left: 100px;
+    margin-bottom: 10px;
+    text-decoration: line-through;
+}
+.hide-show{
+    border-radius: 20px;
+    background-color: moccasin;
+    opacity: 0.7;
+    margin-left: 600px;
+
+}
+.text-in-active{
+    color: blue;
+    margin-left: 70px;
+
+}
+h1{
+    padding-top: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+body{
+    margin-top: 0px;
+    border-style: none;
+    border-width: 8px;
+}
+#todos_list{
+    padding-top: 10px;
+    padding-left: 30px;
+}
+h3{
+    padding-left: 100px;
+    text-decoration: underline;
+    text-decoration-style: solid;
+
+}

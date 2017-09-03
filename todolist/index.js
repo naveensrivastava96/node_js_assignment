@@ -21,24 +21,20 @@ app.delete("/api/todos/:id",function(req,res) {
     }
 });
 app.post("/api/todos/",function(req,res){
-    var todoo='maths';//req.body.todo_title;
-    console.log(req.body);
-    if(!todoo)
+    Title=req.body.todo_title;
+
+    if(!Title)
     {
         res.status(400).json({error:"todo title cant empty"});
     }
     else
     {
-
         var new_todo_obj={
-            title:'maths',//req.body.todo_title,
+            title:Title,
             status:todo.statusenum.active
         };
         todo.todos[todo.new_todo_id++]=new_todo_obj;
-        //console.log(todo.todos);
         res.json(todo.todos);
-        //res.send(todo.todos);
-
 
     }
 });
@@ -67,19 +63,16 @@ app.get("/api/todos/:status_get",function(req,res){
         }
     }
     if(!k)
-        res.json({error:"bad request"});
+        res.json({error:"bad request for this type"});
    else {
         var result = {};
-        var n = 0;
 
-        for (i in todo.todos) {
-            //console.log(i);
-            if (todo.todos[i].status === get_s) {
-                result[n] = todo.todos[i];
-                n++;
+        Object.keys(todo.todos).forEach(function(key){
+            if(todo.todos[key].status===get_s)
+            {
+                result[key]=todo.todos[key];
             }
-
-        }
+        });
         res.json(result);
     }
 

@@ -13,5 +13,7 @@ var status_array=[];
 var num=0;
 for(i in statusenum){
  status_array[num]=i;
+ num++;
 }
+
     module.exports={status_array:status_array,new_todo_id:new_todo_id,statusenum:statusenum, todos:todos};
