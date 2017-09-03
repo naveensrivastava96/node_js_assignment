@@ -61,9 +61,30 @@ function createTodoElement(id,todo_object) {
     todo_element.appendChild(todo_button);
     return todo_element;
 }
+function activeajax(id){
+    var xhr=new XMLHttpRequest();
+    xhr.open("PUT","/api/todos/"+id,true);
+    xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+    var data="changed_status=active";
+    xhr.onreadystatechange=function(){
+        if(xhr.readyState==RESPONSE_DONE)
+        {
+            if(xhr.status==STATUS_OK)
+            {
+                getactiveelements();
+                get_complete_list();
+            }
+            else
+            {
+                console.log("can't get completed list");
+            }
+        }
+    }
+    xhr.send(data);
+}
 
 function completeajax(id){
-    console.log("id in compplete ajax : "+id);
+
     var xhr=new XMLHttpRequest();
     xhr.open("PUT","/api/todos/"+id,true);
     xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
@@ -185,6 +206,12 @@ function createTodoElementtocomplete(id,todo_object){
     todo_delete_button.innerText="mark to delete";
     todo_delete_button.setAttribute("onclick","deleteajax("+id+")");
     todo_delete_button.setAttribute("class","del-button");
+
+    todo_active_button=document.createElement("button");
+    todo_active_button.innerText="mark to active";
+    todo_active_button.setAttribute("onclick","activeajax("+id+")");
+    todo_active_button.setAttribute("class","active-button");
+    todo_element.appendChild(todo_active_button);
     todo_element.appendChild(todo_delete_button);
     return todo_element;
 }
@@ -230,7 +257,7 @@ function addtodoajax()
 }
 function todoajax()
 {
-    console.log("define it");
+
     var xhr=new XMLHttpRequest();
     xhr.open("GET","/api/todos",true);
     xhr.onreadystatechange=function()

@@ -1,1 +1,2 @@
 todolist/node_modules/*
+new.txt
